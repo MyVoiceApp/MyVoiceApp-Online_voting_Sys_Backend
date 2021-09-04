@@ -1,0 +1,9 @@
+File from: [./uploads/file-1604993573176.png]
+
+File to: [./copres_uploads/file-1604993573176.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\pngquant-bin\vendor\pngquant.exe --quality=50-80 -o ./copres_uploads/file-1604993573176.png ./uploads/file-1604993573176.png
+  error: Not a PNG file (libpng failed)
+  error: cannot decode image uploads\file-1604993573176.png

@@ -1,0 +1,18 @@
+File from: [./uploads/file-1604995897715.png]
+
+File to: [./copres_uploads/file-1604995897715.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\pngquant-bin\vendor\pngquant.exe --quality=50-80 -o ./copres_uploads/file-1604995897715.png ./uploads/file-1604995897715.png
+  error: Not a PNG file (libpng failed)
+  error: cannot decode image uploads\file-1604995897715.png
+File from: [./uploads/file-1604994366008.png]
+
+File to: [./copres_uploads/file-1604994366008.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\pngquant-bin\vendor\pngquant.exe --quality=50-80 -o ./copres_uploads/file-1604994366008.png ./uploads/file-1604994366008.png
+  error: Not a PNG file (libpng failed)
+  error: cannot decode image uploads\file-1604994366008.png

@@ -1,0 +1,50 @@
+File from: [./uploads/scaled_image_picker79775996593981599.jpg]
+
+File to: [./copres_uploads/scaled_image_picker79775996593981599.jpg]
+
+Compression algorithm: [mozjpeg]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\mozjpeg\vendor\cjpeg.exe -quality 100 -outfile ./copres_uploads/scaled_image_picker79775996593981599.jpg ./uploads/scaled_image_picker79775996593981599.jpg
+Unrecognized input file format --- perhaps you need -targa
+File from: [./uploads/scaled_image_picker6687777145924363939.jpg]
+
+File to: [./copres_uploads/scaled_image_picker6687777145924363939.jpg]
+
+Compression algorithm: [mozjpeg]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\mozjpeg\vendor\cjpeg.exe -quality 100 -outfile ./copres_uploads/scaled_image_picker6687777145924363939.jpg ./uploads/scaled_image_picker6687777145924363939.jpg
+Unrecognized input file format --- perhaps you need -targa
+File from: [./uploads/scaled_image_picker4669940503129354061.jpg]
+
+File to: [./copres_uploads/scaled_image_picker4669940503129354061.jpg]
+
+Compression algorithm: [mozjpeg]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\mozjpeg\vendor\cjpeg.exe -quality 100 -outfile ./copres_uploads/scaled_image_picker4669940503129354061.jpg ./uploads/scaled_image_picker4669940503129354061.jpg
+Unrecognized input file format --- perhaps you need -targa
+File from: [./uploads/scaled_image_picker5038220174128999038.jpg]
+
+File to: [./copres_uploads/scaled_image_picker5038220174128999038.jpg]
+
+Compression algorithm: [mozjpeg]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\mozjpeg\vendor\cjpeg.exe -quality 100 -outfile ./copres_uploads/scaled_image_picker5038220174128999038.jpg ./uploads/scaled_image_picker5038220174128999038.jpg
+Unrecognized input file format --- perhaps you need -targa
+File from: [./uploads/file-1604993573176.png]
+
+File to: [./copres_uploads/file-1604993573176.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\pngquant-bin\vendor\pngquant.exe --quality=100 -o ./copres_uploads/file-1604993573176.png ./uploads/file-1604993573176.png
+  error: Not a PNG file (libpng failed)
+  error: cannot decode image uploads\file-1604993573176.png
+File from: [./uploads/file-1604994366008.png]
+
+File to: [./copres_uploads/file-1604994366008.png]
+
+Compression algorithm: [pngquant]
+
+Description: Error: Command failed: E:\projects\Project - AaNY\any_cloud\node_modules\pngquant-bin\vendor\pngquant.exe --quality=100 -o ./copres_uploads/file-1604994366008.png ./uploads/file-1604994366008.png
+  error: Not a PNG file (libpng failed)
+  error: cannot decode image uploads\file-1604994366008.png
