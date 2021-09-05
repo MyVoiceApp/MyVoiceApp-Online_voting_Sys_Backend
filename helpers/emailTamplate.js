@@ -1,6 +1,6 @@
 var nodemailer = require("nodemailer");
 
-var sendEmail = function (email, title, detail) {
+var sendEmail = function (email) {
     rand = Math.floor(Math.random() * 2000 + 999);;
     //Step 1
     var transporter = nodemailer.createTransport({
@@ -17,8 +17,8 @@ var sendEmail = function (email, title, detail) {
     // Step 2
     let mailOptions = {
         from: 'testermail018@gmail.com',
-        to: 'imranarshad329@gmail.com',
-        subject: 'Veryfy OTP',
+        to: email,
+        subject: 'Successfully registerd',
         html: `
             <html>
 

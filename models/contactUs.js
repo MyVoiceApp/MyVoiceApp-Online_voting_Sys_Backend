@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
-    name: String,
     email: String,
     subject: String,
+    website: String,
     description: String,
     deletedAt: { type: String, default: null },
 }, { timestamps: true })
