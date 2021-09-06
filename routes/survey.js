@@ -17,7 +17,7 @@ router.post('/create', async function (req, res, next) {
 });
 
 router.get('/getAll', async function (req, res, next) {
-    var fetch = await Survey.find({ deletedAt: null });
+    var fetch = await Survey.find({ deletedAt: null }).populate('topicId  productId user');
     res.json({ message: 'success', data: fetch });
 
 });
