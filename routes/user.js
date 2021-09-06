@@ -83,20 +83,37 @@ router.post('/sendEmail', async function (req, res, next) {
 })
 
 // getById
-router.get('/:id', AuthToken, async function (req, res, next) {
+router.get('/:id', async function (req, res, next) {
     var gt = await User.findOne({ _id: req.params.id });
     res.json({ message: 'success', data: gt });
 });
 
 // update
-router.post('/update', AuthToken, async function (req, res, next) {
-    User.updateOne({
+router.post('/update', async function (req, res, next) {
+    console.log(req.body);
+    await User.updateOne({
         _id: req.body.id
     }, {
         $set: req.body
-    }).then(fetch => {
-        res.json({ message: 'success' });
     });
+    res.json({ message: 'success' });
+
 });
+
+router.post('/update/profile', async function (req, res, next) {
+    await User.updateOne(
+        {
+            _id: req.body.id,
+        },
+        {
+            $set: {
+                image: req.body.image,
+            },
+        },
+    )
+    res.json({
+        message: 'seccess',
+    })
+})
 
 module.exports = router;
