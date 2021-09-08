@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Product = require('../models/products')
+const Survey = require('../models/survey')
 const AuthToken = require("./middleware/authentication");
 
 
@@ -10,9 +11,19 @@ router.post('/create', async function (req, res, next) {
 });
 
 router.get('/getAll', async function (req, res, next) {
-    var fetch = await Product.find({ deletedAt: null });
+    var fetch = await Product.find({ deletedAt: null }).populate('category');
     res.json({ message: 'success', data: fetch });
 
+});
+
+router.get('/getAll_withsurvey', async function (req, res, next) {
+    var final = [];
+    var fetch = await Product.find({ deletedAt: null }).populate('category');
+    for (let i = 0; i < fetch.length; i++) {
+        var cunt = await Survey.count({ productId: fetch[i]._id, deletedAt: null });
+        final.push({ product: fetch[i], survey: cunt })
+    }
+    res.json({ message: 'success', data: final });
 });
 
 router.get('/getById/:id', async function (req, res, next) {

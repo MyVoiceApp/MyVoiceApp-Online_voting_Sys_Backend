@@ -5,7 +5,6 @@ const AuthToken = require("./middleware/authentication");
 
 
 router.post('/create', async function (req, res, next) {
-    console.log(req.body)
     var fetch = await Survey.find({ user: req.body.user, topicId: req.body.topicId, deletedAt: null });
 
     if (fetch.length >= 3) {
