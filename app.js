@@ -46,6 +46,7 @@ app.use('/topic', require('./routes/topics'));
 app.use('/contactus', require('./routes/contactUs'));
 app.use('/slider', require('./routes/slider'));
 app.use('/survey', require('./routes/survey'));
+app.use('/voteproduct', require('./routes/voteProduct'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
