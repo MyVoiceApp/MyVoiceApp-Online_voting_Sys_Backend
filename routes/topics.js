@@ -30,7 +30,7 @@ router.get('/getById/:id', async function (req, res, next) {
     res.json({ message: 'success', data: fetch });
 });
 
-router.post('/update', AuthToken, async function (req, res, next) {
+router.post('/update', async function (req, res, next) {
     await Topic.updateOne({
         _id: req.body.id
     }, {
@@ -40,7 +40,7 @@ router.post('/update', AuthToken, async function (req, res, next) {
 
 });
 
-router.delete('/delete/:id', AuthToken, async function (req, res, next) {
+router.delete('/delete/:id', async function (req, res, next) {
     console.log(req.body)
     await Topic.updateOne({
         _id: req.params.id
@@ -52,5 +52,30 @@ router.delete('/delete/:id', AuthToken, async function (req, res, next) {
     res.json({ message: 'success' });
 
 });
+
+router.get('/search/:text', async function (req, res, next) {
+    var search = req.params.text;
+    var final = [];
+    var fetch = await Topic.find({ description: { $regex: '.*' + search + '.*' } }).populate('category');
+    for (let i = 0; i < fetch.length; i++) {
+        var cunt = await Survey.count({ topicId: fetch[i]._id, deletedAt: null });
+        final.push({ topic: fetch[i], survey: cunt })
+    }
+    res.jsonp({ message: 'success', data: final });
+});
+
+
+router.get('/bycategory/:id', async function (req, res, next) {
+    var final = [];
+    console.log(req.params.id)
+    var fetch = await Topic.find({ category: req.params.id }).populate('category');
+    for (let i = 0; i < fetch.length; i++) {
+        var cunt = await Survey.count({ topicId: fetch[i]._id, deletedAt: null });
+        final.push({ topic: fetch[i], survey: cunt })
+    }
+    res.jsonp({ message: 'success', data: final });
+});
+
+
 
 module.exports = router;
