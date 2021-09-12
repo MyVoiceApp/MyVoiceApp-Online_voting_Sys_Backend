@@ -1,24 +1,24 @@
 var express = require('express');
 var router = express.Router();
 const Product = require('../models/products')
-const voteProduct = require('../models/voteProduct')
+const Vote = require('../models/vote')
 const AuthToken = require("./middleware/authentication");
 var ip = require('ip');
 
 router.post('/create', async function (req, res, next) {
     var localip = ip.address();
     req.body.ip = localip;
-    var fetch = await voteProduct.find({ ip: req.body.ip, productId: req.body.productId, deletedAt: null });
+    var fetch = await Vote.find({ ip: req.body.ip, topicId: req.body.topicId, deletedAt: null });
     if (fetch.length >= 3) {
-        res.json({ message: 'already three time vote submitted' });
+        res.json({ message: 'Already_three_time_submitted' });
     } else {
-        await voteProduct.create(req.body);
+        await Vote.create(req.body);
         res.json({ message: 'success' })
     }
 });
 
 router.get('/getAll', async function (req, res, next) {
-    var fetch = await voteProduct.find().populate('productId');
+    var fetch = await Vote.find().populate('productId');
     res.json({ message: 'success', data: fetch })
 });
 

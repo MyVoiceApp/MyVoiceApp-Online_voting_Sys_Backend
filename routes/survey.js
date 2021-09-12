@@ -5,8 +5,7 @@ const AuthToken = require("./middleware/authentication");
 
 
 router.post('/create', async function (req, res, next) {
-    var fetch = await Survey.find({ user: req.body.user, topicId: req.body.topicId, deletedAt: null });
-
+    var fetch = await Survey.find({ user: req.body.user, productId: req.body.productId, deletedAt: null });
     if (fetch.length >= 3) {
         res.json({ message: 'already three time survey submitted' });
     } else {
@@ -18,7 +17,6 @@ router.post('/create', async function (req, res, next) {
 router.get('/getAll', async function (req, res, next) {
     var fetch = await Survey.find({ deletedAt: null }).populate('topicId  productId user');
     res.json({ message: 'success', data: fetch });
-
 });
 
 router.get('/getById/:id', async function (req, res, next) {
