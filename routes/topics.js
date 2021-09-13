@@ -27,6 +27,17 @@ router.get('/getAll_withvote', async function (req, res, next) {
     res.json({ message: 'success', data: final });
 });
 
+router.get('/getSix_withvote', async function (req, res, next) {
+    var final = [];
+    var fetch = await Topic.find({ deletedAt: null }).populate('category');
+    for (let i = 0; i < fetch.length; i++) {
+        var cunt = await Vote.count({ topicId: fetch[i]._id, deletedAt: null });
+        final.push({ topic: fetch[i], survey: cunt })
+    }
+    var sli = final.slice(0, 6);
+    res.json({ message: 'success', data: sli });
+});
+
 router.get('/getById/:id', async function (req, res, next) {
     var fetch = await Topic.findOne({ _id: req.params.id, deletedAt: null });
     res.json({ message: 'success', data: fetch });

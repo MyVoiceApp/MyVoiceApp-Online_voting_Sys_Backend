@@ -25,6 +25,16 @@ router.get('/getAll_withsurvey', async function (req, res, next) {
     res.json({ message: 'success', data: final });
 });
 
+router.get('/getSix_withsurvey', async function (req, res, next) {
+    var final = [];
+    var fetch = await Product.find({ deletedAt: null }).populate('category');
+    for (let i = 0; i < fetch.length; i++) {
+        var cunt = await Survey.count({ productId: fetch[i]._id, deletedAt: null });
+        final.push({ product: fetch[i], vote: cunt })
+    }
+    var sli = final.slice(0, 6);
+    res.json({ message: 'success', data: sli });
+});
 
 router.get('/getById/:id', async function (req, res, next) {
     var fetch = await Product.findOne({ _id: req.params.id, deletedAt: null });
