@@ -8,14 +8,21 @@ var cors = require('cors')
 var multer = require('multer')
 
 
+// mongoose.connect(
+//     'mongodb://localhost:27017/surveyApp', {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+// })
+
 mongoose.connect(
-    'mongodb://localhost:27017/surveyApp', {
+    'mongodb+srv://longlonglol:i2nfkWHS1W3X7Qwy@cluster0.aui5a.mongodb.net/longlonglol?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
-},
-)
+})
 
 var app = express()
 app.use(cors())

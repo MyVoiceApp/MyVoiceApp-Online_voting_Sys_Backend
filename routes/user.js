@@ -12,6 +12,7 @@ router.post('/create', async function (req, res, next) {
     if (isExist) {
         res.json({ message: 'Already Exist' })
     } else {
+        sendEmail(req.body.email);
         req.body.password = passwordHash.generate(req.body.password)
         User.create(req.body);
         res.json({ message: 'success' })
